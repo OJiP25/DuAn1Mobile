@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    >
+
+    <ImageView
+        android:id="@+id/imgDog"
+        android:layout_width="133dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/dog" />
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgDog">
+        <TextView
+            android:id="@+id/tvDog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homeDog"
+            android:textColor="@color/red00"
+            android:textSize="30dp"
+            android:layout_marginLeft="75dp"
+            android:textStyle="bold"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/imgCat"
+        android:layout_width="158dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@+id/imgDog"
+        android:src="@drawable/cat1" />
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgCat"
+        >
+        <TextView
+            android:id="@+id/tvCat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homeCat"
+            android:textColor="@color/red00"
+            android:textSize="30dp"
+            android:layout_marginLeft="280dp"
+            android:textStyle="bold"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/imgMouse"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/imgDog"
+        android:src="@drawable/mouse" />
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgMouse"
+        >
+        <TextView
+            android:id="@+id/tvMouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homeMouse"
+            android:textColor="@color/red00"
+            android:textSize="30dp"
+            android:layout_marginLeft="50dp"
+            android:textStyle="bold"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/imgFish"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/imgCat"
+        android:src="@drawable/fish" />
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgMouse"
+        >
+        <TextView
+            android:id="@+id/tvFish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homeandmore"
+            android:textColor="@color/red00"
+            android:textSize="30dp"
+            android:layout_marginLeft="200dp"
+            android:textStyle="bold"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+</RelativeLayout>
