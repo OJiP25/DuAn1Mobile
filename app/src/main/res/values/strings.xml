@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">DuAn1Mobile</string>
+    <string name="nameapp">Welcome To Learn About Pets</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password </string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="Createaccount">Create Account</string>
+    <string name="saveacc">Save Account</string>
+    <string name="homeDog">Dog</string>
+    <string name="homeCat">Cat</string>
+    <string name="homeMouse">Mouse</string>
+    <string name="homeandmore">And More...</string>
+    <string name="retype_pass">Retype password</string>
+    <string name="cancel">Cancel</string>
+    <string name="create">Create</string>
+    <string name="Changepass">Change Password</string>
+    <string name="currentpass">Current Password</string>
+    <string name="newpass">New Password</string>
+    <string name="change">Change</string>
+    <string name="createarticle">Create article</string>
 </resources>
