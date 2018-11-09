@@ -10,6 +10,7 @@
             android:id="@+id/imgview"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginLeft="15dp"
             android:src="@drawable/user"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 

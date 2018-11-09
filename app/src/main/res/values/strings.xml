@@ -29,4 +29,9 @@
     <string name="newpass">New Password</string>
     <string name="change">Change</string>
     <string name="createarticle">Create article</string>
+    <string name="uploadfile">Upload file</string>
+    <string name="characteristics">Characteristics</string>
+    <string name="price">Price</string>
+    <string name="link">Link</string>
+    <string name="share">Share</string>
 </resources>

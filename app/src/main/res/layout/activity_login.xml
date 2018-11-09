@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                    android:id="@+id/Username"
+                    android:id="@+id/edtUsername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_username"
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/edtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
@@ -75,7 +75,7 @@
 
             <CheckBox
                 android:layout_marginTop="10dp"
-                android:id="@+id/Cbpass"
+                android:id="@+id/chkPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/saveacc" />
@@ -86,7 +86,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/CreateAccount"
+                    android:id="@+id/btCreateAccount"
                     style="?android:textAppearanceSmall"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
@@ -94,18 +94,20 @@
                     android:text="@string/Createaccount"
                     android:textColor="@color/red00"
                     android:textStyle="bold"
+                    android:onClick="CreateAccount"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="30dp"
                     android:background="@drawable/singin_button"/>
 
                 <Button
-                    android:id="@+id/Singin"
+                    android:id="@+id/btSingin"
                     style="?android:textAppearanceSmall"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/red00"
                     android:layout_marginTop="16dp"
                     android:text="@string/action_sign_in"
+                    android:onClick="SingIn"
                     android:textStyle="bold"
                     android:background="@drawable/singin_button"/>
             </LinearLayout>
