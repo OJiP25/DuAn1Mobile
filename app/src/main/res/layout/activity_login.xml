@@ -100,7 +100,7 @@
                     android:background="@drawable/singin_button"/>
 
                 <Button
-                    android:id="@+id/btSingin"
+                    android:id="@+id/btnSingin"
                     style="?android:textAppearanceSmall"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"

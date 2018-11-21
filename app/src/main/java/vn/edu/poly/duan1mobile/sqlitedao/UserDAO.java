@@ -24,6 +24,10 @@ public class UserDAO implements Constant{
         db = dbHelper.getWritableDatabase();
     }
 
+    public UserDAO(DatabaseHelper databaseHelper) {
+
+    }
+
     public int insertUser(User user){
         ContentValues values = new ContentValues();
         values.put("username",user.getUsername());
