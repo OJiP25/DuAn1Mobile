@@ -51,19 +51,19 @@ public class MouseDAO {
     //getAll
     public List<Mouse> getAllCat() {
         List<Mouse> dsMouse = new ArrayList<>();
-        Cursor c = db.query(TABLE_MOUSE, null, null, null, null, null, null);
-        c.moveToFirst();
-        while (c.isAfterLast() == false) {
+        Cursor ccc = db.query(TABLE_MOUSE, null, null, null, null, null, null);
+        ccc.moveToFirst();
+        while (ccc.isAfterLast() == false) {
             Mouse mouse = new Mouse();
-            mouse.setEdtNamepet(c.getString(0));
-            mouse.setEdtCharacteristics(c.getString(1));
-            mouse.setEdtPrice(c.getString(2));
-            mouse.setEdtLink(c.getString(3));
+            mouse.setEdtNamepet(ccc.getString(0));
+            mouse.setEdtCharacteristics(ccc.getString(1));
+            mouse.setEdtPrice(ccc.getString(2));
+            mouse.setEdtLink(ccc.getString(3));
             dsMouse.add(mouse);
             Log.d("//=====", mouse.toString());
-            c.moveToNext();
+            ccc.moveToNext();
         }
-        c.close();
+        ccc.close();
         return dsMouse;
     }
 

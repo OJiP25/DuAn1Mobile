@@ -50,25 +50,25 @@ public class DogDAO {
 
     //getAll
     public List<Dog> getAllDog() {
-        List<Dog> dsSach = new ArrayList<>();
-        Cursor c = db.query(TABLE_DOG, null, null, null, null, null, null);
-        c.moveToFirst();
-        while (c.isAfterLast() == false) {
+        List<Dog> dsDog = new ArrayList<>();
+        Cursor cc = db.query(TABLE_DOG, null, null, null, null, null, null);
+        cc.moveToFirst();
+        while (cc.isAfterLast() == false) {
             Dog dog = new Dog();
-            dog.setEdtNamepet(c.getString(0));
-            dog.setEdtCharacteristics(c.getString(1));
-            dog.setEdtPrice(c.getString(2));
-            dog.setEdtLink(c.getString(3));
-            dsSach.add(dog);
+            dog.setEdtNamepet(cc.getString(0));
+            dog.setEdtCharacteristics(cc.getString(1));
+            dog.setEdtPrice(cc.getString(2));
+            dog.setEdtLink(cc.getString(3));
+            dsDog.add(dog);
             Log.d("//=====", dog.toString());
-            c.moveToNext();
+            cc.moveToNext();
         }
-        c.close();
-        return dsSach;
+        cc.close();
+        return dsDog;
     }
 
     //update
-    public int updateCat(Dog dog) {
+    public int updateDog(Dog dog) {
         ContentValues values = new ContentValues();
         values.put("Namepet", dog.getEdtNamepet());
         values.put("Characteristics", dog.getEdtCharacteristics());
