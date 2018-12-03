@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity{
     CheckBox chkPass;
 
     public String ssUser,ssPass;
-    UserDAO userDAO;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,7 +45,6 @@ public class LoginActivity extends AppCompatActivity{
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword = findViewById(R.id.edtPassword);
         chkPass = findViewById(R.id.chkPass);
-        userDAO = new UserDAO(LoginActivity.this);
 
     }
 
@@ -60,20 +58,13 @@ public class LoginActivity extends AppCompatActivity{
     public void SingIn(View view) {
         ssUser = edtUsername.getText().toString().trim();
         ssPass = edtPassword.getText().toString().trim();
-        User us = userDAO.getUser(ssUser);
         boolean check = chkPass.isChecked();
         if (ssUser.isEmpty() || ssPass.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Tên đăng nhập và mật khẩu không được bỏ trống",
                     Toast.LENGTH_SHORT).show();
         } else {
-            String oPass = us.getPassword();
-            String o = us.getUsername();
             if(ssUser.equalsIgnoreCase("admin") && ssPass.equalsIgnoreCase("admin")) {
                 rememberUser(ssUser, ssPass,check);
-                finish();
-                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-            } else if (o.equals(ssUser) && oPass.equals(ssPass)) {
-                rememberUser(ssUser, ssPass, check);
                 finish();
                 startActivity(new Intent(LoginActivity.this, HomeActivity.class));
             } else {

@@ -7,44 +7,56 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
         android:padding="10dp">
+
         <ImageView
-            android:id="@+id/imgCat"
+            android:id="@+id/imgCatc"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/cat1"/>
+            android:src="@drawable/cat1" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <EditText
-                android:id="@+id/edtNamepet"
+                android:id="@+id/edtNamepetc"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name Pet"
-                style="@style/Base.TextAppearance.AppCompat.Medium"/>
+                android:hint="Name Pet" />
+
             <EditText
-                android:id="@+id/edtCharacteristics"
+                android:id="@+id/edtCharacteristicsc"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Characteristics"
-                style="@style/Base.TextAppearance.AppCompat.Medium"/>
+                android:hint="Characteristics" />
+
             <EditText
-                android:id="@+id/edtPrice"
+                android:id="@+id/edtPricec"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Price"
-                style="@style/Base.TextAppearance.AppCompat.Medium"/>
+                android:hint="Price" />
+
             <EditText
-                android:id="@+id/edtLink"
+                android:id="@+id/edtLinkc"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Link"
-                style="@style/Base.TextAppearance.AppCompat.Medium"/>
+                android:hint="Link" />
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgclear"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_clear_black_24dp" />
 
     </LinearLayout>
 

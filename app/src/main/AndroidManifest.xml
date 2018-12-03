@@ -28,7 +28,11 @@
         <activity android:name=".DogActivity" />
         <activity android:name=".CatActivity" />
         <activity android:name=".MouseActivity" />
-        <activity android:name=".AndMoreActivity"></activity>
+        <activity android:name=".AndMoreActivity"/>
+        <activity android:name=".AddUserActivity"/>
+        <activity android:name=".AddCatActivity"/>
+        <activity android:name=".AddMouseActivity"/>
+        <activity android:name=".AddDogActivity"/>
     </application>
 
 </manifest>

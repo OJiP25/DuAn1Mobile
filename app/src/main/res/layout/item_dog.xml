@@ -21,30 +21,37 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <EditText
-                android:id="@+id/edtNamepet"
+                android:id="@+id/edtNamepetd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name Pet"
+                android:hint="Name Pet"
                 style="@style/Base.TextAppearance.AppCompat.Medium"/>
             <EditText
-                android:id="@+id/edtCharacteristics"
+                android:id="@+id/edtCharacteristicsd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Characteristics"
+                android:hint="Characteristics"
                 style="@style/Base.TextAppearance.AppCompat.Medium"/>
             <EditText
-                android:id="@+id/edtPrice"
+                android:id="@+id/edtPriced"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Price"
+                android:hint="Price"
                 style="@style/Base.TextAppearance.AppCompat.Medium"/>
             <EditText
-                android:id="@+id/edtLink"
+                android:id="@+id/edtLinkd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Link"
+                android:hint="Link"
                 style="@style/Base.TextAppearance.AppCompat.Medium"/>
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgcleard"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_clear_black_24dp" />
 
     </LinearLayout>
 

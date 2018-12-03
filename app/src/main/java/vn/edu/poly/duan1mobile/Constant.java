@@ -8,8 +8,8 @@ public interface Constant {
     String COLUMN_PASSWORD = "Password";
 
     String CREATE_TABLE_USER = "CREATE TABLE" + TABLE_USER + "(" +
-            COLUMN_USERNAME + "VARCHAR PRIMARI KEY ," +
-            COLUMN_PASSWORD + "VARCHAR"+ ")";
+            COLUMN_USERNAME + " VARCHAR PRIMARY KEY ," +
+            COLUMN_PASSWORD + " VARCHAR "+ ")";
 
 
     //Cat

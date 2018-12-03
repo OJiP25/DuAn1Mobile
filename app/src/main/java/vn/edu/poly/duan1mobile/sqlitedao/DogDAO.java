@@ -10,36 +10,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 import vn.edu.poly.duan1mobile.database.DatabaseHelper;
-import vn.edu.poly.duan1mobile.model.Cat;
+import vn.edu.poly.duan1mobile.model.Dog;
 
-public class CatDAO {
-
+public class DogDAO {
     private SQLiteDatabase db;
     private DatabaseHelper dbHelper;
-    public static final String TABLE_CAT = "Cat";
-    public static final String SQL_CAT = "CREATE TABLE CAT (namepet text primary key,  characteristics text, price text, link text)";
-    public static final String TAG = "CatDAO";
+    public static final String TABLE_DOG = "Dog";
+    public static final String SQL_DOG = "CREATE TABLE DOG (namepet text primary key, characteristics text, price text, link text)";
+    public static final String TAG = "DogDAO";
 
-    public CatDAO(Context context){
+    public DogDAO(Context context){
         dbHelper = new DatabaseHelper(context);
         db = dbHelper.getWritableDatabase();
     }
 
-    public int insertCat(Cat cat) {
+    public int insertCat(Dog dog) {
         ContentValues values = new ContentValues();
-        values.put("namepet", cat.getEdtNamepet());
-        values.put("characteristics", cat.getEdtCharacteristics());
-        values.put("price", cat.getEdtPrice());
-        values.put("link", cat.getEdtLink());
-        if (checkPrimaryKey(cat.getEdtNamepet())) {
-            int result = db.update(TABLE_CAT, values, "namepet=?", new
-                    String[]{cat.getEdtNamepet()});
+        values.put("namepet", dog.getEdtNamepet());
+        values.put("characteristics", dog.getEdtCharacteristics());
+        values.put("price", dog.getEdtPrice());
+        values.put("link", dog.getEdtLink());
+        if (checkPrimaryKey(dog.getEdtNamepet())) {
+            int result = db.update(TABLE_DOG, values, "namepet=?", new
+                    String[]{dog.getEdtNamepet()});
             if (result == 0) {
                 return -1;
             }
         } else {
             try {
-                if (db.insert(TABLE_CAT, null, values) == -1) {
+                if (db.insert(TABLE_DOG, null, values) == -1) {
                     return -1;
                 }
             } catch (Exception ex) {
@@ -50,18 +49,18 @@ public class CatDAO {
     }
 
     //getAll
-    public List<Cat> getAllCat() {
-        List<Cat> dsSach = new ArrayList<>();
-        Cursor c = db.query(TABLE_CAT, null, null, null, null, null, null);
+    public List<Dog> getAllDog() {
+        List<Dog> dsSach = new ArrayList<>();
+        Cursor c = db.query(TABLE_DOG, null, null, null, null, null, null);
         c.moveToFirst();
         while (c.isAfterLast() == false) {
-            Cat cat = new Cat();
-            cat.setEdtNamepet(c.getString(0));
-            cat.setEdtCharacteristics(c.getString(1));
-            cat.setEdtPrice(c.getString(2));
-            cat.setEdtLink(c.getString(3));
-            dsSach.add(cat);
-            Log.d("//=====", cat.toString());
+            Dog dog = new Dog();
+            dog.setEdtNamepet(c.getString(0));
+            dog.setEdtCharacteristics(c.getString(1));
+            dog.setEdtPrice(c.getString(2));
+            dog.setEdtLink(c.getString(3));
+            dsSach.add(dog);
+            Log.d("//=====", dog.toString());
             c.moveToNext();
         }
         c.close();
@@ -69,14 +68,14 @@ public class CatDAO {
     }
 
     //update
-    public int updateCat(Cat cat) {
+    public int updateCat(Dog dog) {
         ContentValues values = new ContentValues();
-        values.put("Namepet", cat.getEdtNamepet());
-        values.put("Characteristics", cat.getEdtCharacteristics());
-        values.put("Price", cat.getEdtPrice());
-        values.put("Link", cat.getEdtLink());
-        int result = db.update(TABLE_CAT, values, "idBook=?", new
-                String[]{cat.getEdtNamepet()});
+        values.put("Namepet", dog.getEdtNamepet());
+        values.put("Characteristics", dog.getEdtCharacteristics());
+        values.put("Price", dog.getEdtPrice());
+        values.put("Link", dog.getEdtLink());
+        int result = db.update(TABLE_DOG, values, "idBook=?", new
+                String[]{dog.getEdtNamepet()});
         if (result == 0) {
             return -1;
         }
@@ -85,7 +84,7 @@ public class CatDAO {
 
     //delete
     public int deleteCatByID(String idBook) {
-        int result = db.delete(TABLE_CAT, "Namepet=?", new String[]{idBook});
+        int result = db.delete(TABLE_DOG, "Namepet=?", new String[]{idBook});
         if (result == 0)
             return -1;
         return 1;
@@ -101,7 +100,7 @@ public class CatDAO {
         String[] selectionArgs = {strPrimaryKey};
         Cursor c = null;
         try {
-            c = db.query(TABLE_CAT, columns, selection, selectionArgs, null, null,
+            c = db.query(TABLE_DOG, columns, selection, selectionArgs, null, null,
                     null);
             c.moveToFirst();
             int i = c.getCount();
@@ -116,26 +115,24 @@ public class CatDAO {
         }
     }
     //getAll
-    public Cat getCatByID(String idBook) {
-        Cat cat = null;
+    public Dog getCatByID(String idBook) {
+        Dog dog = null;
         //WHERE clause
         String selection = "idBook=?";
         //WHERE clause arguments
         String[] selectionArgs = {idBook};
-        Cursor c = db.query(TABLE_CAT, null, selection, selectionArgs, null, null, null);
+        Cursor c = db.query(TABLE_DOG, null, selection, selectionArgs, null, null, null);
         Log.d("getBookByID", "===>" + c.getCount());
         c.moveToFirst();
         while (c.isAfterLast() == false) {
-            cat = new Cat();
-            cat.setEdtNamepet(c.getString(0));
-            cat.setEdtCharacteristics(c.getString(1));
-            cat.setEdtPrice(c.getString(2));
-            cat.setEdtLink(c.getString(3));
+            dog = new Dog();
+            dog.setEdtNamepet(c.getString(0));
+            dog.setEdtCharacteristics(c.getString(1));
+            dog.setEdtPrice(c.getString(2));
+            dog.setEdtLink(c.getString(3));
             break;
         }
         c.close();
-        return cat;
+        return dog;
     }
-
-
 }

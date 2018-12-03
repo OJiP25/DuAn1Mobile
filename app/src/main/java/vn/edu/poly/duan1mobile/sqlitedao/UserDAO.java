@@ -14,9 +14,11 @@ import vn.edu.poly.duan1mobile.Constant;
 import vn.edu.poly.duan1mobile.database.DatabaseHelper;
 import vn.edu.poly.duan1mobile.model.User;
 
-public class UserDAO implements Constant{
+public class UserDAO {
     private SQLiteDatabase db;
     private DatabaseHelper dbHelper;
+    public static final String TABLE_USER = "User";
+    public static final String SQL_USER = "CREATE TABLE User (username text primary key, password text);";
     public static final String TAG = "UserDAO";
 
     public UserDAO(Context context){

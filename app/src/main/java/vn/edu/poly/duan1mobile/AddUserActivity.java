@@ -23,11 +23,11 @@ public class AddUserActivity extends AppCompatActivity{
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.create_account);
         intView();
     }
 
     public void intView(){
-        setContentView(R.layout.create_account);
         edtUsername = (EditText)findViewById(R.id.edtUser);
         edtPassword = (EditText)findViewById(R.id.edtPass);
         edtRetypepass = (EditText)findViewById(R.id.edtRetypePass);
