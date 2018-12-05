@@ -16,7 +16,7 @@ public class DogDAO {
     private SQLiteDatabase db;
     private DatabaseHelper dbHelper;
     public static final String TABLE_DOG = "Dog";
-    public static final String SQL_DOG = "CREATE TABLE DOG (namepet text primary key, characteristics text, price text, link text)";
+    public static final String SQL_DOG = "CREATE TABLE DOG (namepetd text primary key, characteristicsd text, priced text, linkd text)";
     public static final String TAG = "DogDAO";
 
     public DogDAO(Context context){
@@ -24,14 +24,14 @@ public class DogDAO {
         db = dbHelper.getWritableDatabase();
     }
 
-    public int insertCat(Dog dog) {
+    public int insertDog(Dog dog) {
         ContentValues values = new ContentValues();
-        values.put("namepet", dog.getEdtNamepet());
-        values.put("characteristics", dog.getEdtCharacteristics());
-        values.put("price", dog.getEdtPrice());
-        values.put("link", dog.getEdtLink());
+        values.put("namepetd", dog.getEdtNamepet());
+        values.put("characteristicsd", dog.getEdtCharacteristics());
+        values.put("priced", dog.getEdtPrice());
+        values.put("linkd", dog.getEdtLink());
         if (checkPrimaryKey(dog.getEdtNamepet())) {
-            int result = db.update(TABLE_DOG, values, "namepet=?", new
+            int result = db.update(TABLE_DOG, values, "namepetd=?", new
                     String[]{dog.getEdtNamepet()});
             if (result == 0) {
                 return -1;
@@ -48,19 +48,18 @@ public class DogDAO {
         return 1;
     }
 
-    //getAll
     public List<Dog> getAllDog() {
         List<Dog> dsDog = new ArrayList<>();
-        Cursor cc = db.query(TABLE_DOG, null, null, null, null, null, null);
+        Cursor cc= db.query(TABLE_DOG,null,null,null,null,null,null);
         cc.moveToFirst();
         while (cc.isAfterLast() == false) {
-            Dog dog = new Dog();
-            dog.setEdtNamepet(cc.getString(0));
-            dog.setEdtCharacteristics(cc.getString(1));
-            dog.setEdtPrice(cc.getString(2));
-            dog.setEdtLink(cc.getString(3));
-            dsDog.add(dog);
-            Log.d("//=====", dog.toString());
+            Dog dogd = new Dog();
+            dogd.setEdtNamepet(cc.getString(0));
+            dogd.setEdtCharacteristics(cc.getString(1));
+            dogd.setEdtPrice(cc.getString(2));
+            dogd.setEdtLink(cc.getString(3));
+            dsDog.add(dogd);
+            Log.d("//===", dogd.toString());
             cc.moveToNext();
         }
         cc.close();
@@ -70,11 +69,11 @@ public class DogDAO {
     //update
     public int updateDog(Dog dog) {
         ContentValues values = new ContentValues();
-        values.put("Namepet", dog.getEdtNamepet());
-        values.put("Characteristics", dog.getEdtCharacteristics());
-        values.put("Price", dog.getEdtPrice());
-        values.put("Link", dog.getEdtLink());
-        int result = db.update(TABLE_DOG, values, "idBook=?", new
+        values.put("namepetd", dog.getEdtNamepet());
+        values.put("characteristicsd", dog.getEdtCharacteristics());
+        values.put("priced", dog.getEdtPrice());
+        values.put("linkd", dog.getEdtLink());
+        int result = db.update(TABLE_DOG, values, "namepetd=?", new
                 String[]{dog.getEdtNamepet()});
         if (result == 0) {
             return -1;
@@ -82,21 +81,16 @@ public class DogDAO {
         return 1;
     }
 
-    //delete
-    public int deleteCatByID(String idBook) {
-        int result = db.delete(TABLE_DOG, "Namepet=?", new String[]{idBook});
+    public int deleteCatByID(String namepetd) {
+        int result = db.delete(TABLE_DOG, "namepetd=?", new String[]{namepetd});
         if (result == 0)
             return -1;
         return 1;
     }
 
-    //check
     public boolean checkPrimaryKey(String strPrimaryKey) {
-        //SELECT
-        String[] columns = {"idBook"};
-        //WHERE clause
-        String selection = "idBook=?";
-        //WHERE clause arguments
+        String[] columns = {"namepetd"};
+        String selection = "namepetd=?";
         String[] selectionArgs = {strPrimaryKey};
         Cursor c = null;
         try {
@@ -114,25 +108,5 @@ public class DogDAO {
             return false;
         }
     }
-    //getAll
-    public Dog getCatByID(String idBook) {
-        Dog dog = null;
-        //WHERE clause
-        String selection = "idBook=?";
-        //WHERE clause arguments
-        String[] selectionArgs = {idBook};
-        Cursor c = db.query(TABLE_DOG, null, selection, selectionArgs, null, null, null);
-        Log.d("getBookByID", "===>" + c.getCount());
-        c.moveToFirst();
-        while (c.isAfterLast() == false) {
-            dog = new Dog();
-            dog.setEdtNamepet(c.getString(0));
-            dog.setEdtCharacteristics(c.getString(1));
-            dog.setEdtPrice(c.getString(2));
-            dog.setEdtLink(c.getString(3));
-            break;
-        }
-        c.close();
-        return dog;
-    }
+
 }

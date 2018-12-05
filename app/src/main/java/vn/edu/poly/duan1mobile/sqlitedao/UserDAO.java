@@ -4,13 +4,11 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.nfc.Tag;
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import vn.edu.poly.duan1mobile.Constant;
 import vn.edu.poly.duan1mobile.database.DatabaseHelper;
 import vn.edu.poly.duan1mobile.model.User;
 

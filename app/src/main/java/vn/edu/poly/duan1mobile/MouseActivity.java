@@ -24,7 +24,7 @@ import vn.edu.poly.duan1mobile.sqlitedao.MouseDAO;
 public class MouseActivity extends AppCompatActivity {
 
     ListView lvMouse;
-    public static List<Mouse> arrayList = new ArrayList<>();
+    public static List<Mouse> arrayListMouse = new ArrayList<>();
 
     MouseAdapter mouseAdapter= null;
     MouseDAO mouseDAO;
@@ -35,8 +35,8 @@ public class MouseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mouse);
         lvMouse = findViewById(R.id.lvCat);
         mouseDAO = new MouseDAO(MouseActivity.this);
-        arrayList = mouseDAO.getAllCat();
-        mouseAdapter = new MouseAdapter(this, arrayList);
+        arrayListMouse = mouseDAO.getAllMouse();
+        mouseAdapter = new MouseAdapter(this, arrayListMouse);
         lvMouse.setAdapter(mouseAdapter);
         lvMouse.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -79,13 +79,10 @@ public class AddCatActivity extends AppCompatActivity {
         }
 
     }
-    public int checkPositionTypeBook(String strTypeBook) {
-        for (int i = 0; i < cats.size(); i++) {
-            if (strTypeBook.equals(cats.get(i).getEdtNamepet())) {
-                return i;
-            }
-        }
-        return 0;
+
+
+    public void Catcancel(View view) {
+        startActivity(new Intent(AddCatActivity.this,CatActivity.class));
     }
 }
 

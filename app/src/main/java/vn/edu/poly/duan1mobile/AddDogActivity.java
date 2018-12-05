@@ -62,7 +62,7 @@ public class AddDogActivity extends AppCompatActivity{
                     edtPrice.getText().toString(), edtLink.getText().toString()
             );
             try {
-                if (dogDAO.insertCat(dog) > 0) {
+                if (dogDAO.insertDog(dog) > 0) {
                     Toast.makeText(getApplicationContext(), "Hoàn thành",
                             Toast.LENGTH_SHORT).show();
 
@@ -78,12 +78,5 @@ public class AddDogActivity extends AppCompatActivity{
         }
 
     }
-    public int checkPositionTypeBook(String strTypeBook) {
-        for (int i = 0; i < cats.size(); i++) {
-            if (strTypeBook.equals(cats.get(i).getEdtNamepet())) {
-                return i;
-            }
-        }
-        return 0;
-    }
+
 }

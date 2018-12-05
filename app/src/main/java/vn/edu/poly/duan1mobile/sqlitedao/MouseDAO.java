@@ -16,7 +16,7 @@ public class MouseDAO {
     private SQLiteDatabase db;
     private DatabaseHelper dbHelper;
     public static final String TABLE_MOUSE = "Mouse";
-    public static final String SQL_MOUSE = "CREATE TABLE MOUSE (namepet text primary key,  characteristics text, price text, link text)";
+    public static final String SQL_MOUSE = "CREATE TABLE MOUSE (namepetm text primary key,  characteristicsm text, pricem text, linkm text)";
     public static final String TAG = "MouseDAO";
 
     public MouseDAO(Context context){
@@ -26,12 +26,12 @@ public class MouseDAO {
 
     public int insertCat(Mouse mouse) {
         ContentValues values = new ContentValues();
-        values.put("Namepet", mouse.getEdtNamepet());
-        values.put("Characteristics", mouse.getEdtCharacteristics());
-        values.put("Price", mouse.getEdtPrice());
-        values.put("Link", mouse.getEdtLink());
+        values.put("namepetm", mouse.getEdtNamepet());
+        values.put("characteristicsm", mouse.getEdtCharacteristics());
+        values.put("pricem", mouse.getEdtPrice());
+        values.put("linkm", mouse.getEdtLink());
         if (checkPrimaryKey(mouse.getEdtNamepet())) {
-            int result = db.update(TABLE_MOUSE, values, "Namepet=?", new
+            int result = db.update(TABLE_MOUSE, values, "namepetm=?", new
                     String[]{mouse.getEdtNamepet()});
             if (result == 0) {
                 return -1;
@@ -49,7 +49,7 @@ public class MouseDAO {
     }
 
     //getAll
-    public List<Mouse> getAllCat() {
+    public List<Mouse> getAllMouse() {
         List<Mouse> dsMouse = new ArrayList<>();
         Cursor ccc = db.query(TABLE_MOUSE, null, null, null, null, null, null);
         ccc.moveToFirst();
@@ -67,24 +67,11 @@ public class MouseDAO {
         return dsMouse;
     }
 
-    //update
-    public int updateCat(Mouse mouse ) {
-        ContentValues values = new ContentValues();
-        values.put("Namepet", mouse.getEdtNamepet());
-        values.put("Characteristics", mouse.getEdtCharacteristics());
-        values.put("Price", mouse.getEdtPrice());
-        values.put("Link", mouse.getEdtLink());
-        int result = db.update(TABLE_MOUSE, values, "idBook=?", new
-                String[]{mouse.getEdtNamepet()});
-        if (result == 0) {
-            return -1;
-        }
-        return 1;
-    }
+
 
     //delete
-    public int deleteCatByID(String idBook) {
-        int result = db.delete(TABLE_MOUSE, "Namepet=?", new String[]{idBook});
+    public int deleteCatByID(String namepetm) {
+        int result = db.delete(TABLE_MOUSE, "namepetm=?", new String[]{namepetm});
         if (result == 0)
             return -1;
         return 1;
@@ -93,9 +80,9 @@ public class MouseDAO {
     //check
     public boolean checkPrimaryKey(String strPrimaryKey) {
         //SELECT
-        String[] columns = {"idBook"};
+        String[] columns = {"namepetm"};
         //WHERE clause
-        String selection = "idBook=?";
+        String selection = "namepetm=?";
         //WHERE clause arguments
         String[] selectionArgs = {strPrimaryKey};
         Cursor c = null;
@@ -115,12 +102,12 @@ public class MouseDAO {
         }
     }
     //getAll
-    public Mouse getCatByID(String idBook) {
+    public Mouse getMouseByID(String namepetm) {
         Mouse mouse = null;
         //WHERE clause
-        String selection = "idBook=?";
+        String selection = "namepetm=?";
         //WHERE clause arguments
-        String[] selectionArgs = {idBook};
+        String[] selectionArgs = {namepetm};
         Cursor c = db.query(TABLE_MOUSE, null, selection, selectionArgs, null, null, null);
         Log.d("getBookByID", "===>" + c.getCount());
         c.moveToFirst();

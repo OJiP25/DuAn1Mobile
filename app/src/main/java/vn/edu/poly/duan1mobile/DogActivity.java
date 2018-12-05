@@ -20,7 +20,7 @@ import vn.edu.poly.duan1mobile.sqlitedao.DogDAO;
 public class DogActivity extends AppCompatActivity {
 
     ListView lvDog;
-    public static List<Dog> arrayList = new ArrayList<>();
+    public static List<Dog> arrayListDog = new ArrayList<>();
 
     DogAdapter dogAdapter= null;
     DogDAO dogDAO;
@@ -31,8 +31,8 @@ public class DogActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dog);
         lvDog = findViewById(R.id.lvCat);
         dogDAO = new DogDAO(DogActivity.this);
-        arrayList = dogDAO.getAllDog();
-        dogAdapter = new DogAdapter(this, arrayList);
+        arrayListDog = dogDAO.getAllDog();
+        dogAdapter = new DogAdapter(this, arrayListDog);
         lvDog.setAdapter(dogAdapter);
         lvDog.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

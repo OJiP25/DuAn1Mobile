@@ -84,8 +84,8 @@ public class CatDAO {
     }
 
     //delete
-    public int deleteCatByID(String idBook) {
-        int result = db.delete(TABLE_CAT, "Namepet=?", new String[]{idBook});
+    public int deleteCatByID(String namepet) {
+        int result = db.delete(TABLE_CAT, "Namepet=?", new String[]{namepet});
         if (result == 0)
             return -1;
         return 1;
@@ -94,9 +94,9 @@ public class CatDAO {
     //check
     public boolean checkPrimaryKey(String strPrimaryKey) {
         //SELECT
-        String[] columns = {"idBook"};
+        String[] columns = {"namepet"};
         //WHERE clause
-        String selection = "idBook=?";
+        String selection = "namepet=?";
         //WHERE clause arguments
         String[] selectionArgs = {strPrimaryKey};
         Cursor c = null;
@@ -115,27 +115,7 @@ public class CatDAO {
             return false;
         }
     }
-    //getAll
-    public Cat getCatByID(String idBook) {
-        Cat cat = null;
-        //WHERE clause
-        String selection = "idBook=?";
-        //WHERE clause arguments
-        String[] selectionArgs = {idBook};
-        Cursor c = db.query(TABLE_CAT, null, selection, selectionArgs, null, null, null);
-        Log.d("getBookByID", "===>" + c.getCount());
-        c.moveToFirst();
-        while (c.isAfterLast() == false) {
-            cat = new Cat();
-            cat.setEdtNamepet(c.getString(0));
-            cat.setEdtCharacteristics(c.getString(1));
-            cat.setEdtPrice(c.getString(2));
-            cat.setEdtLink(c.getString(3));
-            break;
-        }
-        c.close();
-        return cat;
-    }
+
 
 
 }
