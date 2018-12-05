@@ -82,7 +82,7 @@ public class MouseAdapter extends BaseAdapter implements Filterable{
         } else
             holder = (DogAdapter.ViewHolder) convertView.getTag();
         Mouse _entry = (Mouse) arrMouse.get(position);
-        holder.img.setImageResource(R.drawable.cat1);
+        holder.img.setImageResource(R.drawable.mouse);
         holder.txtCatName.setText("Name: " + _entry.getEdtNamepet());
         holder.txtCharac.setText("Characteristics: " + _entry.getEdtCharacteristics());
         holder.txtPrice.setText("Price: " + _entry.getEdtPrice());

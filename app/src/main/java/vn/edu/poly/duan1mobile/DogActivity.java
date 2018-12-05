@@ -29,7 +29,7 @@ public class DogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dog);
-        lvDog = findViewById(R.id.lvCat);
+        lvDog = findViewById(R.id.lvcat);
         dogDAO = new DogDAO(DogActivity.this);
         arrayListDog = dogDAO.getAllDog();
         dogAdapter = new DogAdapter(this, arrayListDog);

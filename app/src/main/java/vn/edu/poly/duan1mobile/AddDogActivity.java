@@ -20,7 +20,7 @@ public class AddDogActivity extends AppCompatActivity{
     EditText edtPrice;
     EditText edtLink;
     DogDAO dogDAO;
-    List<Dog> cats = new ArrayList<>();
+    List<Dog> dogs = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

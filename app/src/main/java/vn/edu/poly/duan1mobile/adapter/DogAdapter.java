@@ -82,7 +82,7 @@ public class DogAdapter extends BaseAdapter implements Filterable{
         } else
             holder = (ViewHolder) convertView.getTag();
         Dog _entry = (Dog) arrDog.get(position);
-        holder.img.setImageResource(R.drawable.cat1);
+        holder.img.setImageResource(R.drawable.dog);
         holder.txtCatName.setText("Name: " + _entry.getEdtNamepet());
         holder.txtCharac.setText("Characteristics: " + _entry.getEdtCharacteristics());
         holder.txtPrice.setText("Price: " + _entry.getEdtPrice());
