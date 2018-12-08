@@ -1,15 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawblelayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".AndMoreActivity">
+    tools:context=".AndMoreActivity"
+    >
 
-    <android.support.v7.widget.RecyclerView
+    <android.support.design.widget.NavigationView
+        android:id="@+id/btNav"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header_home"
+        app:menu="@menu/menu_main"/>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        ></android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <EditText
+                android:id="@+id/edtSe"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Tìm kiếm"
+                style="@style/Base.TextAppearance.AppCompat.Medium"/>
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:onClick="addcat"/>
+        </LinearLayout>
+        <ListView
+            android:id="@+id/lvCat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-</LinearLayout>
+        </ListView>
+    </LinearLayout>
+
+
+
+</android.support.v4.widget.DrawerLayout>

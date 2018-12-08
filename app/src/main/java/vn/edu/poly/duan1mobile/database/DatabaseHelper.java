@@ -3,6 +3,8 @@ package vn.edu.poly.duan1mobile.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import vn.edu.poly.duan1mobile.sqlitedao.AndMoreDAO;
 import vn.edu.poly.duan1mobile.sqlitedao.CatDAO;
 import vn.edu.poly.duan1mobile.sqlitedao.DogDAO;
 import vn.edu.poly.duan1mobile.sqlitedao.MouseDAO;
@@ -17,6 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         sqLiteDatabase.execSQL(CatDAO.SQL_CAT);
         sqLiteDatabase.execSQL(DogDAO.SQL_DOG);
         sqLiteDatabase.execSQL(MouseDAO.SQL_MOUSE);
+        sqLiteDatabase.execSQL(AndMoreDAO.SQL_ANDMORE);
 
 
     }
@@ -26,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + UserDAO.TABLE_USER);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + CatDAO.TABLE_CAT);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + DogDAO.TABLE_DOG);
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + MouseDAO.TABLE_MOUSE);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + AndMoreDAO.TABLE_ANDMORE);
         onCreate(sqLiteDatabase);
     }
 }

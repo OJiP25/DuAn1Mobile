@@ -4,22 +4,19 @@ package vn.edu.poly.duan1mobile;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
+
 import android.support.annotation.Nullable;
+
+
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+
 import android.view.View;
-import android.widget.Button;
+
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.Timer;
-import java.util.TimerTask;
 
-import vn.edu.poly.duan1mobile.database.DatabaseHelper;
-import vn.edu.poly.duan1mobile.model.User;
-import vn.edu.poly.duan1mobile.sqlitedao.UserDAO;
 
 public class LoginActivity extends AppCompatActivity{
 
@@ -99,7 +96,6 @@ public class LoginActivity extends AppCompatActivity{
         }
         chkPass.setChecked(check);
     }
-
 
 
 }

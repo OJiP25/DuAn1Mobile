@@ -33,6 +33,7 @@
         <activity android:name=".AddCatActivity"/>
         <activity android:name=".AddMouseActivity"/>
         <activity android:name=".AddDogActivity"/>
+        <activity android:name=".AddAndMoreActivity"/>
     </application>
 
 </manifest>
